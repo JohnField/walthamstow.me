@@ -26,7 +26,8 @@ div#content iframe {
 	border: none;
 }
 </style>
-<script>
+<script type="application/javascript">
+	// Google Analytics.
 	(function(i, s, o, g, r, a, m) {
 		i['GoogleAnalyticsObject'] = r;
 		i[r] = i[r] || function() {
@@ -42,12 +43,35 @@ div#content iframe {
 	ga('create', 'UA-94019156-1', 'auto');
 	ga('send', 'pageview');
 </script>
+<script type="application/javascript">
+	// Hacky way to show the editing view in gDocs if needed.
+	function getQueryStringValue(key) {
+		return decodeURIComponent(
+			window.location.search.replace(
+			new RegExp(
+			"^(?:.*[&\\?]"
+					+ encodeURIComponent(key).replace(/[\.\+\*]/g, "\\$&")
+					+ "(?:\\=([^&]*))?)?.*$", "i"), "$1")
+		);
+	}
+
+	function switchToEdit() {
+		if (getQueryStringValue("edit") == 'true') {
+			gdoc.src = 'https://docs.google.com/document/d/1eDRE8QkbZO-GGAYzXCSDQfsz97DZtWqMJZDlbDQH_cU/edit?embedded=true';
+		} else {
+			//gdoc.src = 'https://gdoc.pub/doc/1eDRE8QkbZO-GGAYzXCSDQfsz97DZtWqMJZDlbDQH_cU';
+		}
+	}
+	window.onload = switchToEdit;
+
+
+</script>
 <meta name="keywords" content="walthamstow,e17,community,london">
 </head>
 <body>
 	<div id="content">
-		<iframe
-			src="https://docs.google.com/document/d/1eDRE8QkbZO-GGAYzXCSDQfsz97DZtWqMJZDlbDQH_cU/edit?embedded=true"></iframe>
+		<iframe id="gdoc"
+			src="https://gdoc.pub/doc/1eDRE8QkbZO-GGAYzXCSDQfsz97DZtWqMJZDlbDQH_cU"></iframe>
 	</div>
 </body>
 </html>
