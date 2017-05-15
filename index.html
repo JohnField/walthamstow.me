@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-<title>walthamstow.me</title>
+<title>{{ site.github.title }}</title>
 <style type="text/css">
 body, html {
 	margin: 0;
@@ -40,7 +40,7 @@ div#content iframe {
 	})(window, document, 'script',
 			'https://www.google-analytics.com/analytics.js', 'ga');
 
-	ga('create', 'UA-94019156-1', 'auto');
+	ga('create', '{{ site.github.ga_analytics_code }}', 'auto');
 	ga('send', 'pageview');
 </script>
 <script type="application/javascript">
@@ -57,21 +57,22 @@ div#content iframe {
 
 	function switchToEdit() {
 		if (getQueryStringValue("edit") == 'true') {
-			gdoc.src = 'https://docs.google.com/document/d/1eDRE8QkbZO-GGAYzXCSDQfsz97DZtWqMJZDlbDQH_cU/edit?embedded=true';
+			gdoc.src = 'https://docs.google.com/document/d/{{ site.github.googledoc_id }}/edit?embedded=true';
 		} else {
-			//gdoc.src = 'https://gdoc.pub/doc/1eDRE8QkbZO-GGAYzXCSDQfsz97DZtWqMJZDlbDQH_cU';
+			// Do nothing.
+			//gdoc.src = 'https://gdoc.pub/doc/{{ site.github.googledoc_id }}';
 		}
 	}
 	window.onload = switchToEdit;
 
 
 </script>
-<meta name="keywords" content="walthamstow,e17,community,london">
+<meta name="keywords" content="{{ site.github.tag_text }}">
 </head>
 <body>
 	<div id="content">
 		<iframe id="gdoc"
-			src="https://gdoc.pub/doc/1eDRE8QkbZO-GGAYzXCSDQfsz97DZtWqMJZDlbDQH_cU"></iframe>
+			src="https://gdoc.pub/doc/{{ site.github.googledoc_id }}"></iframe>
 	</div>
 </body>
 </html>
