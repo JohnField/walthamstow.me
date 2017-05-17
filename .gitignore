@@ -1,0 +1,10 @@
+# Jekyll
+.jekyll-metadata
+.bundle
+_site
+.sass-cache
+Gemfile.lock
+*.gem
+
+# GitHub Pages
+CNAME
