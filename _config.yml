@@ -9,12 +9,12 @@ googledoc_id: GOOGLEDOC_ID
 # Google Analytics code.
 ga_code: GA_CODE
 
-
 # Jekyll / GitHub Pages settings
+baseurl: ""
 markdown: kramdown
 #exclude: ["README.md"]
 sass:
-  style: compressed
+  style: compact
 
 # Don't use a GitHub Page theme by default.
 #theme: jekyll-theme-minimal
