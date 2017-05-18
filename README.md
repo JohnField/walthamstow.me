@@ -1,13 +1,16 @@
 # googledoc-as-githubpage
 
-Embed a Google Doc in a GitHub Page.
+Embed a Google Doc in a [GitHub Page](https://pages.github.com/).
 
-Initially implemented in http://walthamstow.me/ as an MVP - see https://medium.com/@Vodex/walthamstow-me-d745f2bd4ea4 
+Initially implemented as an MVP for [http://walthamstow.me/](http://walthamstow.me/) - see [https://medium.com/@Vodex/walthamstow-me-d745f2bd4ea4](https://medium.com/@Vodex/walthamstow-me-d745f2bd4ea4)
 
-The recommended Google Analytics practice is to publish the gDoc, then embed it in a page with tracking scripts.
+It seems best practice is to publish the gDoc, then embed it in a page along with non-gDoc assets like Google Analytics scripts. I've in turn wrapped this in a GitHub page using Jekyll.
 
-This in turn is then hosted as a GitHub page.
 
-# Configuration
+## Installation
 
-See _config.yml for configuration of the code and Google Doc URL.
+See [https://github.com/JohnField/walthamstow.me](https://github.com/JohnField/walthamstow.me) for an example.
+
+* Fork/clone repo as required
+* Configure metadata in _config.yml
+* Configure GitHub Pages as required
